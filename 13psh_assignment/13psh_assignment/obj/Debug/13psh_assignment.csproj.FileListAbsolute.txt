@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\bin\Debug\_13psh_assignment.exe
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\bin\Debug\_13psh_assignment.pdb
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\obj\Debug\13psh_assignment.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\obj\Debug\13psh_assignment.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\obj\Debug\_13psh_assignment.exe
+C:\Users\User\Desktop\assignment\king14-assignment_Sihyeon\13psh_assignment\13psh_assignment\obj\Debug\_13psh_assignment.pdb
