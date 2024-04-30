@@ -1,0 +1,6 @@
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\bin\Debug\TextRPG_1.exe
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\bin\Debug\TextRPG_1.pdb
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\obj\Debug\TextRPG_1.csproj.AssemblyReference.cache
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\obj\Debug\TextRPG_1.csproj.CoreCompileInputs.cache
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\obj\Debug\TextRPG_1.exe
+C:\Users\USER\RiderProjects\TextRPG_1\TextRPG_1\obj\Debug\TextRPG_1.pdb
