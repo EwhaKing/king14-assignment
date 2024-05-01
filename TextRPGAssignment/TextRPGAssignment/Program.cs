@@ -315,7 +315,7 @@
                         Console.WriteLine("도망쳤습니다!");
                         break;
                     }
-                    // 도망에 실패했다면 전투에 돌입한다.
+                    
                     else
                     {
                         Console.WriteLine("도망치지 못합니다!");
