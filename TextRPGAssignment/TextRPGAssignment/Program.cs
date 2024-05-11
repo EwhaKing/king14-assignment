@@ -12,9 +12,15 @@
 
         struct Player
         {
+            public int defaultHp;
             public int hp;
             public int attack;
-            public int potion;
+        }
+
+        struct Potion
+        {
+            public int number;
+            public int amtRecovery;
         }
 
         
@@ -39,6 +45,12 @@
             public string name;
             public int hp;
             public int attack;
+        }
+
+        static void initPotion(Potion potion)
+        {
+            potion.number = 3;
+            potion.amtRecovery = 10;
         }
 
         // 플레이어 직업 선택 함수
@@ -75,24 +87,24 @@
             switch (choice)
             {
                 case ClassType.Knight:
+                    player.defaultHp = 100;
                     player.hp = 100;
                     player.attack = 10;
-                    player.potion = 5;
                     break;
                 case ClassType.Archer:
+                    player.defaultHp = 85;
                     player.hp = 85;
                     player.attack = 12;
-                    player.potion = 5;
                     break;
                 case ClassType.Mage:
+                    player.defaultHp = 60;
                     player.hp = 60;
                     player.attack = 15;
-                    player.potion = 5; 
                     break;
                 default:
+                    player.defaultHp = 0;
                     player.hp = 0;
                     player.attack = 0;
-                    player.potion = 0;
                     break;
             }
         }
@@ -184,7 +196,7 @@
 
                 if (input == "1")
                 {
-                    Fight(ref player, ref monster);
+                    Fight(ref player, ref monster, ref potion);
 
                     //continue를 이용해 플레이어가 사망상태가 아니라면 루프를 계속 돌고 ,
                     //사망한 상태라면 break로 EnterField를 빠져나가 마을로 가게 함.
@@ -206,7 +218,7 @@
                     else
                     {
                         Console.WriteLine("도망치지 못합니다!");
-                        Fight(ref player, ref monster);
+                        Fight(ref player, ref monster, ref potion);
                         if (player.hp > 0)
                             continue;
                         break;
@@ -237,12 +249,14 @@
         // 3. 몬스터가 플레이어를 공격했을 때, 플레이어의 체력이 0 이하가 된다면 "Game Over... 마을로 돌아갑니다..."를 출력한 뒤 무한루프를 빠져나갑니다.
 
         // 플레이어 vs 몬스터 전투 함수
-        static void Fight(ref Player player, ref Monster monster)
+        static void Fight(ref Player player, ref Monster monster, ref Potion potion)
         {
             ConsoleDIs(player, monster);
 
             while (true)
             {
+                potion.amtRecovery = 10;
+
                 Console.WriteLine("[1]. 공격");
                 Console.WriteLine("[2]. 회복");
                 Console.WriteLine("[3]. 도망");
@@ -281,16 +295,17 @@
                 else if(input == "2")
                 {
                     player.hp += 10;
-                    player.potion -= 1;
+                    potion.number -= 1;
 
-                    if(player.hp > 100)
+                    if(player.hp > player.defaultHp)
                     {
-                        player.hp = 100;
+                        player.hp = player.defaultHp;
+                        potion.amtRecovery = 10 - (player.hp - player.defaultHp);
                     }
                     
                     ConsoleDIs(player, monster);
-                    Console.WriteLine("10의 체력을 회복했습니다.");
-                    Console.WriteLine("남은 물약의 개수 : {0}", player.potion);
+                    Console.WriteLine("{0}의 체력을 회복했습니다.", potion.amtRecovery);
+                    Console.WriteLine("남은 물약의 개수 : {0}", potion.number);
 
                     Console.ReadLine();
 
@@ -357,8 +372,10 @@
 
                 // 플레이어 생성 (체력과 공격력 정보 초기화)
                 Player player;
+                Potion potion;
                 CreatePlayer(choice, out player);
-                Console.WriteLine($"HP:{player.hp} Attack:{player.attack} Potion:{player.potion}");
+                initPotion(potion);
+                Console.WriteLine($"HP:{player.hp} Attack:{player.attack} Potion:{potion.number}");
 
                 // 게임 시작
                 EnterGame(ref player);
