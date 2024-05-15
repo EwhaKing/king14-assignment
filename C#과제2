@@ -1,0 +1,47 @@
+// 강아지 멍멍 모니터링 및 출력 코드
+
+using System;
+
+public class DogMonitor
+{
+    // 짖음 이벤트에 대한 델리게이트 선언
+    public delegate void BarkHandler();
+
+    // 짖음 이벤트 선언
+    public event BarkHandler OnBark;
+
+    // 강아지가 짖는 메소드
+    public void Bark()
+    {
+        Console.WriteLine("멍멍!");
+        // 짖음 이벤트 발생
+        OnBark?.Invoke();
+    }
+}
+
+public class DogBarkNotifier
+{
+    // 짖음 알림을 받는 메소드
+    public void Notify()
+    {
+        Console.WriteLine("강아지가 멍멍!");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // 강아지 모니터 인스턴스
+        DogMonitor dogMonitor = new DogMonitor();
+
+        // 강아지 짖음 알림기 인스턴스
+        DogBarkNotifier notifier = new DogBarkNotifier();
+
+        // 강아지 짖음 이벤트에 강아지 짖음 알림기's Notify 메소드 구독
+        dogMonitor.OnBark += notifier.Notify;
+
+        // 강아지가 멍멍!
+        dogMonitor.Bark();
+    }
+}
