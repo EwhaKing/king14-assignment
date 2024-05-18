@@ -1,0 +1,36 @@
+// 자연수 A를 B번 곱한 수를 알고 싶다.
+// 단, 구하려는 수가 매우 커질 수 있으므로 이를 C로 나눈 나머지를 구하는 프로그램을 작성하시오.
+
+static void Main(string[] args)
+{
+    StreamWriter writer = new StreamWriter(Console.OpenStandardOutput());
+    StreamReader reader = new StreamReader(Console.OpenStandardInput());
+ 
+    long[] input = Array.ConvertAll(reader.ReadLine().Split(), long.Parse);
+    long a = input[0];
+    long b = input[1];
+    long c = input[2];
+ 
+    // 지수 법칙 : a^(n+m) = a^n * a^m
+    // 모듈러 성질 : (a * b) % c = (a % c * b % c) % c
+    writer.WriteLine(DaC(a, b));
+ 
+    reader.Close();
+    writer.Close();
+ 
+    // DivideAndConquer
+    long DaC(long a, long b)
+    {
+        if (b == 1)
+            return a % c;
+ 
+        // 재귀적 풀이법
+        long value = DaC(a, b / 2);
+ 
+        // 짝수
+        if (b % 2 == 0)
+            return value * value % c;
+        else // 홀수
+            return (value * value % c) * a % c;
+    }
+}
