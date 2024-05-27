@@ -1,0 +1,45 @@
+{
+    "name": "player",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "fe83f644-d28e-4d62-a5d5-8471181fc2a2",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "682a7fb1-cf47-4e4e-80a7-def0604768bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "944f6e29-a22f-4357-8ac3-b99f96700994",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77cb5c8a-1a89-48f9-b68f-fd624457cf59",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
