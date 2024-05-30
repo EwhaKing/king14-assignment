@@ -1,5 +1,5 @@
 
-
+플레이어 이동과 레이캐스트를 사용한 장애물 충돌 감지 기능을 유니티에서 구현했다.
 
 
 Uploading Screen Recording 2024-05-30 at 2.29.20 PM.mov…
