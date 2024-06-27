@@ -1,0 +1,22 @@
+*Unity 프로젝트에서 Play 버튼을 누르니 노트북에서 자체 렉이 걸려 화면녹화를 하지 못했습니다...
+프로젝트 파일 첨부는 했지만 영상은 찍지 못했기에 기능 설명글도 함께 첨부합니다!
+
+1. Raycast
+Raycast는 한 점에서 다른 점으로 향하는 가상의 선을 던져서 경로상의 오브젝트를 감지하는 기술이다.
+Unity에서 Raycast는 주로 물리적 충돌 감지나 시선 추적, 발사체의 경로 계산 등에 사용된다.
+
+2. 새로운 인풋 시스템 (Input Action)
+Unity의 새로운 Input System은 복잡한 입력을 더 쉽게 처리할 수 있도록 도와주는 기능이다. 
+다양한 입력 장치(키보드, 마우스, 게임패드 등)를 지원하며, 사용자 정의 가능한 입력 액션을 제공한다.
+
+3. Collider, Collision, Trigger
+Collider는 게임 오브젝트의 물리적 경계를 정의하는 컴포넌트이다. 
+Collision은 오브젝트 간의 충돌을 처리하며, Trigger는 물리적 충돌 없이 오브젝트 간의 상호작용을 처리한다.
+
+4. Resources 폴더
+Resources 폴더는 Unity 프로젝트에서 런타임에 리소스를 로드할 수 있도록 하는 폴더이다. 
+Resources 폴더에 있는 Assests은 Resources.Load 메서드를 사용하여 동적으로 로드할 수 있다.
+
+5. Scriptable Object
+ScriptableObject는 데이터 중심 설계를 지원하는 Unity의 클래스다. 
+ScriptableObject를 사용하면 게임 데이터를 에셋 파일로 저장하고, 이를 여러 오브젝트에서 공유할 수 있다.
