@@ -1,0 +1,2 @@
+Player 상하좌우 이동,
+장애물에 부딪히면 obstacle에 hit 했다고 console 창에 출력.
